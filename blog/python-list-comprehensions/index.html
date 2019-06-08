@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>  Python List Comprehensions! | aelmosalamy
+</title>
+  <link rel="canonical" href="../../blog/python-list-comprehensions/index.html">
+  <link href="../../theme/css/colorbox.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../theme/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="../../theme/css/theme.css">
+
+  
+  <meta name="description" content="What’s up everybody! In this post I am going to explain an essential concept which isn’t very usual between Python beginners: List Comprehensions. If you dabbled a little in Python you probably had some problems where you need to iterate over a list and perform functions to its …">
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+    <div class="col-sm-4">
+      <a href="../../">
+        <img class="img-fluid rounded" src=../../images/profile.png width=200 height=200 alt="aelmosalamy">
+      </a>
+    </div>
+  <div class="col-sm-8">
+    <h1 class="title"><a href="../../">aelmosalamy</a></h1>
+      <p class="text-muted">A passionate learner and a curious creator</p>
+      <ul class="list-inline">
+            <li class="list-inline-item"><a href="../../pages/about-me/">About&nbsp;Me</a></li>
+            <li class="list-inline-item"><a href="../../pages/gallery/">Gallery</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fa fa-github" href="https://github.com/aelmosalamy" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fa fa-instagram" href="https://www.instagram.com/aelmosalam.y/" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  Python List&nbsp;Comprehensions!
+</h1>
+      <hr>
+  <article class="article">
+    <header>
+      <ul class="list-inline">
+        <li class="list-inline-item text-muted" title="2019-01-07T08:58:00+01:00">
+          <i class="fa fa-clock-o"></i>
+          Mon 07 January 2019
+        </li>
+        <li class="list-inline-item">
+          <i class="fa fa-folder-open-o"></i>
+          <a href="../../category/posts.html">posts</a>
+        </li>
+          <li class="list-inline-item">
+            <i class="fa fa-files-o"></i>
+              <a href="../../tag/python.html">#python</a>,               <a href="../../tag/tips.html">#tips</a>          </li>
+      </ul>
+    </header>
+    <div class="content">
+      <p>What’s up everybody! In this post I am going to explain an essential concept which isn’t very usual between Python beginners: List Comprehensions. If you dabbled a little in Python you probably had some problems where you need to iterate over a list and perform functions to its elements on-the-run, to clear things up let me start with a simple task. Given a list of numbers, return a list containing the squares of the original list’s numbers, You might think: <em>“Well, That’s easy!”</em> and write something as the following:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="p">[]</span>              <span class="c1"># Empty list for storing processed numbers </span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>        <span class="c1"># Iterating over that number list</span>
+        <span class="n">output</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span> <span class="c1"># Appending the square to our output list</span>
+    <span class="k">return</span> <span class="n">output</span>            <span class="c1"># Returning the final output</span>
+</pre></div>
+<p>Now if we run it..</p>
+<div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="n">square</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+<span class="c1"># Output: [1, 4, 9, 16, 25, 36, 49]</span>
+</pre></div>
+<p>It works as expected; however, It took around 7 lines to implement and execute, and since Python is built for simplicity, we’ve got a more <em>Pythonic</em> way to do this.</p>
+<h2>The One Liner</h2>
+<div class="highlight"><pre><span></span><span class="p">[</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">]</span>
+<span class="c1"># Output: [1, 4, 9, 16, 25, 36, 49]</span>
+</pre></div>
+<p>Magnificent, right? This is one of the simplest forms of a Python list comprehension, we iterate over each element in the list: <code>for x in numbers</code>, then apply some operations on element <code>x</code> and in our case we used <code>x * x</code> to get the square and finally we placed the whole expression inside square brackets <code>[]</code> to indicate that we want the final output in the form of a <em>List</em>. and all of this in just one line.</p>
+<p>Let’s get a bit more advanced, we can apply our comprehension selectively, ignoring all even numbers for example:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="p">[</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">numbers</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">49</span><span class="p">]</span>
+</pre></div>
+<p>This one is exactly like the previous one except for a little addition. We iterated over the elements in a list: <code>for x in numbers</code> and we applied a specific operation to that <code>x</code> every iteration which is <code>x * x</code>; however, we told Python to do that only if a specific condition is met which is <code>x % 2 != 0</code> which translate to <em>if x is not even</em> in simple English, What I like most about this is how natural it is written, You don’t need much to get used to it, since it is written in logical order. That last sentence can be translated like this: <strong><em>Give me the square of “x” for every “x” in this list of numbers only if that “x” is not even.</em></strong> How much closer to English can this get? Finally, I would like to show you a 2 more examples of Python comprehensions.</p>
+<p>You can use the exact same syntax as so:</p>
+<div class="highlight"><pre><span></span><span class="n">prices</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'apple'</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">'sandwich'</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span> <span class="s1">'almond'</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">shopping_cart</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'apple'</span><span class="p">,</span> <span class="s1">'apple'</span><span class="p">,</span> <span class="s1">'almond'</span><span class="p">,</span> <span class="s1">'apple'</span><span class="p">,</span> <span class="s1">'sandwich'</span><span class="p">]</span>
+<span class="n">total_cost</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">prices</span><span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">shopping_cart</span><span class="p">])</span>
+<span class="c1"># Output: 33</span>
+</pre></div>
+<p>We can even apply the exact same syntax with dictionaries, with <code>key:value</code> pairs as follows:</p>
+<div class="highlight"><pre><span></span><span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="mi">5</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)}</span>
+<span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="mi">25</span><span class="p">}</span>
+</pre></div>
+<p>and there we go, we’ve created a <em>Dictionary Comprehension!</em></p>
+<h2>Conclusion</h2>
+<p>That’s it for this post, hopefully you found it useful, just keep practicing and whenever you are solving any problem, think if there is a possibility that your problem can be solved using list comprehensions, that way you can adopt it and integrate it with your current programming skills!</p>
+    </div>
+  </article>
+  <hr>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function() {
+      this.page.url = '../../blog/python-list-comprehensions/index.html';
+      this.page.identifier = 'python-list-comprehensions';
+    };
+    (function() {
+      var d = document;
+      var s = d.createElement('script');
+      s.src = '//elmosalamy.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript class="text-muted">
+    Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+  </noscript>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="../../archives.html">Archives</a></li>
+    <li class="list-inline-item"><a href="../../categories.html">Categories</a></li>
+      <li class="list-inline-item"><a href="../../tags.html">Tags</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+  <!-- Here we load the scripts responsible for the beautiful Colorbox -->
+  <script src="../../theme/js/jquery.min.js"></script>
+  <!-- Make sure jquery is loaded first, then load colorbox -->
+  <script src="../../theme/js/jquery.colorbox.js"></script>
+  <script src="../../theme/js/load-colorbox.js"></script>
+</body>
+
+</html>
