@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="../../theme/css/theme.css">
 
   
-  <meta name="description" content="What’s up everybody! In this post I am going to explain an essential concept which isn’t very usual between Python beginners: List Comprehensions. If you dabbled a little in Python you probably had some problems where you need to iterate over a list and perform functions to its …">
+  <meta name="description" content="What’s up everybody! In this post I am going to show you an interesting tip which I rarely see young Pythonistas use, it’s List Comprehensions. If you dabbled a little with Python you probably had some problems where you had to iterate over a list and perform functions …">
 
 
 </head>
@@ -67,7 +67,7 @@
       </ul>
     </header>
     <div class="content">
-      <p>What’s up everybody! In this post I am going to explain an essential concept which isn’t very usual between Python beginners: List Comprehensions. If you dabbled a little in Python you probably had some problems where you need to iterate over a list and perform functions to its elements on-the-run, to clear things up let me start with a simple task. Given a list of numbers, return a list containing the squares of the original list’s numbers, You might think: <em>“Well, That’s easy!”</em> and write something as the following:</p>
+      <p>What’s up everybody! In this post I am going to show you an interesting tip which I rarely see young Pythonistas use, it’s <strong>List Comprehensions</strong>. If you dabbled a little with Python you probably had some problems where you had to iterate over a list and perform functions to its elements on-the-run, I know. I make no sense. To clear things up let me start with a simple task. Given a list of numbers, return a list containing the squares of the original list’s numbers, You might think: <em>“Well, That’s easy!”</em> and write something as the following:</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
     <span class="n">output</span> <span class="o">=</span> <span class="p">[]</span>              <span class="c1"># Empty list for storing processed numbers </span>
     <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>        <span class="c1"># Iterating over that number list</span>
@@ -89,7 +89,7 @@
 <div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="p">[</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">numbers</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">]</span>
 <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">49</span><span class="p">]</span>
 </pre></div>
-<p>This one is exactly like the previous one except for a little addition. We iterated over the elements in a list: <code>for x in numbers</code> and we applied a specific operation to that <code>x</code> every iteration which is <code>x * x</code>; however, we told Python to do that only if a specific condition is met which is <code>x % 2 != 0</code> which translate to <em>if x is not even</em> in simple English, What I like most about this is how natural it is written, You don’t need much to get used to it, since it is written in logical order. That last sentence can be translated like this: <strong><em>Give me the square of “x” for every “x” in this list of numbers only if that “x” is not even.</em></strong> How much closer to English can this get? Finally, I would like to show you a 2 more examples of Python comprehensions.</p>
+<p>This one is exactly like the previous one except for a little addition. We iterated over the elements in a list: <code>for x in numbers</code> and we applied a specific operation to that <code>x</code> every iteration which is <code>x * x</code>; however, we told Python to do that only if a specific condition is met which is <code>x % 2 != 0</code> which translate to <em>if x is not even</em> in simple English, What I like most about this is how natural it is written, You don’t need much to get used to it, since it is written in logical order. That last sentence can be translated like this: <em>Give me the square of “x” for every “x” in this list of numbers only if that “x” is not even.</em> How much closer to English can this get? Finally, I would like to show you a 2 more examples of Python comprehensions.</p>
 <p>You can use the exact same syntax as so:</p>
 <div class="highlight"><pre><span></span><span class="n">prices</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'apple'</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">'sandwich'</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span> <span class="s1">'almond'</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
 <span class="n">shopping_cart</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'apple'</span><span class="p">,</span> <span class="s1">'apple'</span><span class="p">,</span> <span class="s1">'almond'</span><span class="p">,</span> <span class="s1">'apple'</span><span class="p">,</span> <span class="s1">'sandwich'</span><span class="p">]</span>
@@ -102,7 +102,8 @@
 </pre></div>
 <p>and there we go, we’ve created a <em>Dictionary Comprehension!</em></p>
 <h2>Conclusion</h2>
-<p>That’s it for this post, hopefully you found it useful, just keep practicing and whenever you are solving any problem, think if there is a possibility that your problem can be solved using list comprehensions, that way you can adopt it and integrate it with your current programming skills!</p>
+<p>Python Comprehensions are extremely powerful tool, easy to read syntax and I find myself using it alot, one practical example is scanning a list of employees, and updating the salary of each employee in a specific team by a percentage of his current salary, in just one line.</p>
+<p>That’s it for this post, hopefully you found it useful, just keep practicing and whenever you are solving any problem, think if there is a possibility that your problem can be solved using list comprehensions, that way you can adopt it and integrate into your current Python weapons. Peace.</p>
     </div>
   </article>
   <hr>
