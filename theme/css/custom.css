@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+/* Colorbox */
+.mybox > img {
+  padding: 5px;
+  border-radius: 10px;
+  backface-visibility: hidden;
+}
+
+.mybox > img:hover {
+  opacity: 0.5;
+  transition: 0.3s ease;
+}
+
+#gallery-mybox.mybox > img {
+  clear: both;
+  border: black solid 1px;
+  overflow: auto;
+  width: 40%;
+}
+
+/* Widen content area */
+.inner {
+  max-width: 38em;
+}
+
+/* Code blocks*/
+.highlight pre code * {
+  white-space: nowrap;
+}
+
+.highlight pre {
+  font-family: 'Consolas', 'Roboto Mono', 'Courier New', monospace;
+  font-size: 0.9em;
+  overflow-x: auto;
+}
+
+.highlight pre code {
+  white-space: pre;
+}
+
+/* Design consistency of code tags with highlighted Pygments' code blocks */
+code {
+  padding: 0.15em 0.5em;
+  background-color: #2f1e2e;
+  color: #e7e9db;
+  font-family: 'Consolas', 'Roboto Mono', 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+/* Italitcize code comments */
+span.c1 {
+  font-style: italic;
+}
+
+span.cm {
+  font-style: italic;
+}
+
+span.cp {
+  font-style: italic;
+}
+
+span.cs {
+  font-style: italic;
+}
+
+/* Increase reading progress bar visibility */
+.progress-bar {
+  height: 2px;
+}
+
+p {
+  font-size: 0.9em
+}
+
+a.menu-button {
+  border: 2px solid #c2c7cc;
+}
+
+a.home-button {
+  border: 2px solid #c2c7cc;
+}
+
