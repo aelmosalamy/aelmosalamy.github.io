@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>Python List Comprehensions! - @elmosalamy</title>
+    <title>Say Hello with Flask! - @elmosalamy</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -9,22 +9,23 @@
 
 
 
-<link rel="canonical" href="../python-list-comprehensions/">
+<link rel="canonical" href="../say-hello-with-flask/">
 
-        <meta name="author" content="Adham Elmosalamy" />
-        <meta name="keywords" content="python,tips" />
-        <meta name="description" content="What’s up everybody! In this post I am going to show you an interesting tip which I rarely see young Pythonistas use, it’s List Comprehensions. If you dabbled a little with Python you probably had some problems where you had to iterate over a list and perform functions …" />
+        <meta name="author" content="aelmosalamy" />
+        <meta name="keywords" content="python,flask,web" />
+        <meta name="description" content="In this post, I am going to introduce you to an interesting Python framework… The popular web development microframework: Flask. A framework basically controls how your code is built and deployed. A framework isn’t a library. Your code calls library functions and methods; on the other hand, A framework …" />
 
         <meta property="og:site_name" content="@elmosalamy" />
         <meta property="og:type" content="article"/>
-        <meta property="og:title" content="Python List Comprehensions!"/>
-        <meta property="og:url" content="../python-list-comprehensions/"/>
-        <meta property="og:description" content="What’s up everybody! In this post I am going to show you an interesting tip which I rarely see young Pythonistas use, it’s List Comprehensions. If you dabbled a little with Python you probably had some problems where you had to iterate over a list and perform functions …"/>
-        <meta property="article:published_time" content="2019-01-07" />
+        <meta property="og:title" content="Say Hello with Flask!"/>
+        <meta property="og:url" content="../say-hello-with-flask/"/>
+        <meta property="og:description" content="In this post, I am going to introduce you to an interesting Python framework… The popular web development microframework: Flask. A framework basically controls how your code is built and deployed. A framework isn’t a library. Your code calls library functions and methods; on the other hand, A framework …"/>
+        <meta property="article:published_time" content="2019-03-01" />
             <meta property="article:section" content="Python" />
             <meta property="article:tag" content="python" />
-            <meta property="article:tag" content="tips" />
-            <meta property="article:author" content="Adham Elmosalamy" />
+            <meta property="article:tag" content="flask" />
+            <meta property="article:tag" content="web" />
+            <meta property="article:author" content="aelmosalamy" />
 
 
 
@@ -83,16 +84,16 @@
             <ol class="breadcrumb">
                 <li><a href=".." title="@elmosalamy"><i class="fa fa-home fa-lg"></i></a></li>
                 <li><a href="../category/python.html" title="Python">Python</a></li>
-                <li class="active">Python List&nbsp;Comprehensions!</li>
+                <li class="active">Say Hello with&nbsp;Flask!</li>
             </ol>
     <section id="content">
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="../python-list-comprehensions/"
+                    <a href="../say-hello-with-flask/"
                        rel="bookmark"
-                       title="Permalink to Python List Comprehensions!">
-                        Python List&nbsp;Comprehensions!
+                       title="Permalink to Say Hello with Flask!">
+                        Say Hello with&nbsp;Flask!
                     </a>
                 </h1>
             </header>
@@ -102,7 +103,7 @@
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2019-01-07T08:58:00+00:00"> Mon 07 January 2019</time>
+        <i class="fa fa-calendar"></i><time datetime="2019-03-01T13:26:00+00:00"> Fri 01 March 2019</time>
     </span>
 
 
@@ -112,47 +113,73 @@
 <span class="label label-default">Tags</span>
 	<a href="../tag/python.html">python</a>
         /
-	<a href="../tag/tips.html">tips</a>
+	<a href="../tag/flask.html">flask</a>
+        /
+	<a href="../tag/web.html">web</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>What’s up everybody! In this post I am going to show you an interesting tip which I rarely see young Pythonistas use, it’s <strong>List Comprehensions</strong>. If you dabbled a little with Python you probably had some problems where you had to iterate over a list and perform functions to its elements on-the-run, I know. I make no sense. To clear things up let me start with a simple task. Given a list of numbers, return a list containing the squares of the original list’s numbers, You might think: <em>“Well, That’s easy!”</em> and write something as the following:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
-    <span class="n">output</span> <span class="o">=</span> <span class="p">[]</span>              <span class="c1"># Empty list for storing numbers </span>
-    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>        <span class="c1"># Iterate over all numbers</span>
-        <span class="n">output</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span> <span class="c1"># Self-explanatory</span>
-    <span class="k">return</span> <span class="n">output</span>            <span class="c1"># Look previous comment</span>
+                <p>In this post, I am going to introduce you to an interesting Python framework…</p>
+<p>The popular web development microframework: Flask.</p>
+<p>A framework basically controls how your code is built and deployed. A framework isn’t a library. Your code calls library functions and methods; on the other hand, A framework calls your code and deploys it.</p>
+<p>Flask is called a <strong>microframework</strong> because it is considered low-level compared to other web frameworks like Django; Flask provides you with the core functions and its up to you how you combine them together to create larger applications, This makes Flask very versatile and extensible.</p>
+<p>A web framework is a framework used for web-based projects. Later, you will see how we can write our application, and then run it using Flask, which will build our application and deploy it to a local web server.</p>
+<p>We are going to write a simple <code>Hello, world!</code> web application and gradually add features to it, as we cover the core principles of Flask in the process.</p>
+<p>First let’s install Flask; In a new terminal window, type the following:</p>
+<div class="highlight"><pre><span></span><span class="gp">$</span> pip install flask
 </pre></div>
-<p>Now if we run it..</p>
-<div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
-<span class="n">square</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
-<span class="c1"># Output: [1, 4, 9, 16, 25, 36, 49]</span>
+<p>Now check if everything is fine and working as expected:</p>
+<div class="highlight"><pre><span></span><span class="gp">$</span> flask --version
+<span class="go">Flask 1.0.2</span>
+<span class="go">Python 3.6.6 (v3.6.6:4cf1f54eb7, Jun 27 2018, 03:37:03) [MSC v.1900 64 bit (AMD64)]</span>
 </pre></div>
-<p>It works as expected; however, It took around 7 lines to implement and execute, and since Python is built for simplicity, we’ve got a more <em>Pythonic</em> way to do this.</p>
-<h2>The One Liner</h2>
-<div class="highlight"><pre><span></span><span class="p">[</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">]</span>
-<span class="c1"># Output: [1, 4, 9, 16, 25, 36, 49]</span>
+<p>You should see a message like the one shown above.
+Now I will create a new Python file, I will call it <code>my-app.py</code> and I will add the following code:</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="nd">@app.route</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s2">"Hello, world!"</span>
 </pre></div>
-<p>Magnificent, right? This is one of the simplest forms of a Python list comprehension, we iterate over each element in the list: <code>for x in numbers</code>, then apply some operations on element <code>x</code> and in our case we used <code>x * x</code> to get the square and finally we placed the whole expression inside square brackets <code>[]</code> to indicate that we want the final output in the form of a <em>List</em>. and all of this in just one line.</p>
-<p>Let’s get a bit more advanced, we can apply our comprehension selectively, ignoring all even numbers for example:</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="p">[</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">numbers</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">]</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">49</span><span class="p">]</span>
+<p>This might look quite unusual, so let’s break this down:</p>
+<ul>
+<li>At line 1 we imported the flask module, specifically a class called <code>Flask</code>.</li>
+<li>At line 3 we instantiated that class passing the <code>__name__</code> constant which refers to the module name, creating an object called <code>app</code>.</li>
+<li>At line 6 we defined a simple function, <code>index</code>, that takes no arguments and returns a typical “Hello, world!” string.</li>
+<li>At line 5 we have what we call a <strong>function decorator</strong>, decorators modify and extend their underlying functions, in this case our <code>@app.route("/")</code> decorator causes our <code>index</code> function to be called when the “/” route is viewed, “/” in any filesystem resembles the root; we are going to see this in action soon.</li>
+</ul>
+<p>Now I will switch back my terminal and type the following:</p>
+<blockquote class="blockquote">
+<p><strong>Note:</strong> Make sure you are in the same directory where your app resides while executing all terminal commands.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">export</span> <span class="nv">FLASK_APP</span><span class="o">=</span>my-app.py
+<span class="gp">$</span> flask run
+<span class="go"> * Serving Flask app "my-app.py"</span>
+<span class="go"> * Environment: production</span>
+<span class="go">   WARNING: Do not use the development server in a production environment.</span>
+<span class="go">   Use a production WSGI server instead.</span>
+<span class="go"> * Debug mode: off</span>
+<span class="go"> * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)</span>
 </pre></div>
-<p>This one is exactly like the previous one except for a little addition. We iterated over the elements in a list: <code>for x in numbers</code> and we applied a specific operation to that <code>x</code> every iteration which is <code>x * x</code>; however, we told Python to do that only if a specific condition is met which is <code>x % 2 != 0</code> which translate to <em>if x is not even</em> in simple English, What I like most about this is how natural it is written, You don’t need much to get used to it, since it is written in logical order. That last sentence can be translated like this: <em>Give me the square of “x” for every “x” in this list of numbers only if that “x” is not even.</em> How much closer to English can this get? Finally, I would like to show you a 2 more examples of Python comprehensions.</p>
-<p>You can use the exact same syntax as so:</p>
-<div class="highlight"><pre><span></span><span class="n">prices</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'apple'</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">'sandwich'</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span> <span class="s1">'almond'</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
-<span class="n">shopping_cart</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'apple'</span><span class="p">,</span> <span class="s1">'almond'</span><span class="p">,</span> <span class="s1">'apple'</span><span class="p">,</span> <span class="s1">'sandwich'</span><span class="p">]</span>
-<span class="n">total_cost</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">prices</span><span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">shopping_cart</span><span class="p">])</span>
-<span class="c1"># Output: 28</span>
+<p>We used <code>export</code> to set the environmental variable <code>FLASK_APP</code> to our application’s name, <code>my-app.py</code>, now when we use <code>flask run</code>, Flask looks at the <code>FLASK_APP</code> environmental variable and runs our app.</p>
+<p>You should see a line saying that our app is running at <code>http://127.0.0.1:5000/</code>.
+<code>127.0.0.1</code> is the <code>localhost</code> which refers to my own computer - since the web server is running on my computer - and 5000 is the port on which my app is running at; Now open your browser and type in “127.0.0.1:5000” and you should see it, beautiful and neatly printed: Hello, world!
+Notice that Flask works with pure <span class="caps">HTML</span> code, so instead of returning <code>Hello, world!</code> in our index function, we can return <code>&lt;h1&gt;Hello, world!&lt;/h1&gt;</code>, now restart the server, reload the page and you should see Hello, world! as a nice <span class="caps">HTML</span> headline.</p>
+<blockquote class="blockquote">
+<p><h1>Hello, world!</h1></p>
+</blockquote>
+<p>Additionally, Flask is serving our application at hostname <code>127.0.0.1:5000</code>, Flask works by returning different <span class="caps">HTML</span> pages to the viewer based on the route its on, for simplicity, let say you are visiting a webpages “http://foo.com/bar”, behind the scenes you are sending a <strong>request</strong> to the server, demanding <code>/bar</code>, the server looks at their files and returns <code>/bar</code> to you, Flask - client-side framework - does the same, it executes Python functions based on whatever route you are visiting, then it returns a pure static <span class="caps">HTML</span> document to the user.</p>
+<p>To further illustrate the idea of routes, try to open <code>127.0.0.1:5000/blah</code> and you will be stopped by a <strong>Not Found</strong> error message, this is because Flask returns Hello, world! only at route “/” not “/blah”.</p>
+<p>Let’s create another route to clarify that concept. In your <code>my-app.py</code> file add the following code:</p>
+<div class="highlight"><pre><span></span><span class="nd">@app.route</span><span class="p">(</span><span class="s2">"/&lt;name&gt;"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s2">"&lt;h1&gt;Hello, {}!&lt;/h1&gt;"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">capitalize</span><span class="p">())</span>
 </pre></div>
-<p>We can even apply the exact same syntax with dictionaries, with <code>key:value</code> pairs as follows:</p>
-<div class="highlight"><pre><span></span><span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">5</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)}</span>
-<span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="mi">25</span><span class="p">}</span>
-</pre></div>
-<p>and there we go, we’ve created a <em>Dictionary Comprehension!</em></p>
-<h2>Conclusion</h2>
-<p>Python Comprehensions are extremely powerful tool, easy to read syntax and I find myself using it alot, one practical example is scanning a list of employees, and updating the salary of each employee in a specific team by a percentage of his current salary, in just one line.</p>
-<p>That’s it for this post, hopefully you found it useful, just keep practicing and whenever you are solving any problem, think if there is a possibility that your problem can be solved using list comprehensions, that way you can adopt it and integrate into your current Python weapons. Peace.</p>
+<p>This technique is called a <strong>Dynamic <span class="caps">URL</span></strong>, at Line 1 we specified a variable, <code>name</code>, between angle brackets, this variable which is a part of the <span class="caps">URL</span> address is then passed to our <code>hello</code> function and returned as a capitalized word inside a <span class="caps">HTML</span> tag, how simple!</p>
+<p>Now restart the server and add <code>/pop</code> to your <span class="caps">URL</span>, you should see a <code>Hello, Pop!</code> headline, experiment with different names and notice how the page’s content changes based on the route, this is especially useful when you want to create a customized experience for each user, you might have <code>/login/Adham</code> that displays <code>Adham</code><span class="quo">‘</span>s profile based on the route your using.</p>
+<p>I will be writing a second post about Flask soon, It would be really appreciated if you leave me a reaction or a comment below, Thanks for sticking around. Stay tuned!</p>
             </div>
             <!-- /.entry-content -->
     <hr />
@@ -175,8 +202,8 @@
             /*var disqus_config = function () {
                 this.language = "en";
 
-                        this.page.identifier = '2019-01-07-python-list-comprehensions';
-                        this.page.url = '../python-list-comprehensions/';
+                        this.page.identifier = '2019-03-01-say-hello-with-flask';
+                        this.page.url = '../say-hello-with-flask/';
             };*/
 
             /* * * DON'T EDIT BELOW THIS LINE * * */
