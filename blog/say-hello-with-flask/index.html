@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Say Hello with Flask! - aelmosalamy</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="../say-hello-with-flask/">
+
+        <meta name="author" content="aelmosalamy" />
+        <meta name="keywords" content="python,flask,web" />
+        <meta name="description" content="In this post, I am going to introduce you to an interesting Python framework… The popular web development microframework: Flask. A framework basically controls how your code is built and deployed. A framework isn’t a library. Your code calls library functions and methods; on the other hand, A framework …" />
+
+        <meta property="og:site_name" content="aelmosalamy" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Say Hello with Flask!"/>
+        <meta property="og:url" content="../say-hello-with-flask/"/>
+        <meta property="og:description" content="In this post, I am going to introduce you to an interesting Python framework… The popular web development microframework: Flask. A framework basically controls how your code is built and deployed. A framework isn’t a library. Your code calls library functions and methods; on the other hand, A framework …"/>
+        <meta property="article:published_time" content="2019-03-01" />
+            <meta property="article:section" content="Python" />
+            <meta property="article:tag" content="python" />
+            <meta property="article:tag" content="flask" />
+            <meta property="article:tag" content="web" />
+            <meta property="article:author" content="aelmosalamy" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../theme/css/bootstrap.cosmo.min.css" type="text/css"/>
+    <link href="../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../theme/css/pygments/paraiso-dark.css" rel="stylesheet">
+        <link href="../theme/css/typogrify.css" rel="stylesheet">
+    <link rel="stylesheet" href="../theme/css/style.css" type="text/css"/>
+        <link href="../theme/css/custom.css" rel="stylesheet">
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../" class="navbar-brand">
+aelmosalamy            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="../pages/about-me/">
+                             About
+                          </a></li>
+                         <li><a href="../pages/gallery/">
+                             Gallery
+                          </a></li>
+                        <li >
+                            <a href="../category/misc.html">Misc</a>
+                        </li>
+                        <li class="active">
+                            <a href="../category/python.html">Python</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+            <ol class="breadcrumb">
+                <li><a href=".." title="aelmosalamy"><i class="fa fa-home fa-lg"></i></a></li>
+                <li><a href="../category/python.html" title="Python">Python</a></li>
+                <li class="active">Say Hello with&nbsp;Flask!</li>
+            </ol>
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="../say-hello-with-flask/"
+                       rel="bookmark"
+                       title="Permalink to Say Hello with Flask!">
+                        Say Hello with&nbsp;Flask!
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2019-03-01T13:26:00+00:00"> Fri 01 March 2019</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="../tag/python.html">python</a>
+        /
+	<a href="../tag/flask.html">flask</a>
+        /
+	<a href="../tag/web.html">web</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>In this post, I am going to introduce you to an interesting Python framework…</p>
+<p>The popular web development microframework: Flask.</p>
+<p>A framework basically controls how your code is built and deployed. A framework isn’t a library. Your code calls library functions and methods; on the other hand, A framework calls your code and deploys it.</p>
+<p>Flask is called a <strong>microframework</strong> because it is considered low-level compared to other web frameworks like Django; Flask provides you with the core functions and its up to you how you combine them together to create larger applications, This makes Flask very versatile and extensible.</p>
+<p>A web framework is a framework used for web-based projects. Later, you will see how we can write our application, and then run it using Flask, which will build our application and deploy it to a local web server.</p>
+<p>We are going to write a simple <code>Hello, world!</code> web application and gradually add features to it, as we cover the core principles of Flask in the process.</p>
+<p>First let’s install Flask; In a new terminal window, type the following:</p>
+<div class="highlight"><pre><span></span><span class="gp">$</span> pip install flask
+</pre></div>
+<p>Now check if everything is fine and working as expected:</p>
+<div class="highlight"><pre><span></span><span class="gp">$</span> flask --version
+<span class="go">Flask 1.0.2</span>
+<span class="go">Python 3.6.6 (v3.6.6:4cf1f54eb7, Jun 27 2018, 03:37:03) [MSC v.1900 64 bit (AMD64)]</span>
+</pre></div>
+<p>You should see a message like the one shown above.
+Now I will create a new Python file, I will call it <code>my-app.py</code> and I will add the following code:</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="nd">@app.route</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s2">"Hello, world!"</span>
+</pre></div>
+<p>This might look quite unusual, so let’s break this down:</p>
+<ul>
+<li>At line 1 we imported the flask module, specifically a class called <code>Flask</code>.</li>
+<li>At line 3 we instantiated that class passing the <code>__name__</code> constant which refers to the module name, creating an object called <code>app</code>.</li>
+<li>At line 6 we defined a simple function, <code>index</code>, that takes no arguments and returns a typical “Hello, world!” string.</li>
+<li>At line 5 we have what we call a <strong>function decorator</strong>, decorators modify and extend their underlying functions, in this case our <code>@app.route("/")</code> decorator causes our <code>index</code> function to be called when the “/” route is viewed, “/” in any filesystem resembles the root; we are going to see this in action soon.</li>
+</ul>
+<p>Now I will switch back my terminal and type the following:</p>
+<blockquote class="blockquote">
+<p><strong>Note:</strong> Make sure you are in the same directory where your app resides while executing all terminal commands.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">export</span> <span class="nv">FLASK_APP</span><span class="o">=</span>my-app.py
+<span class="gp">$</span> flask run
+<span class="go"> * Serving Flask app "my-app.py"</span>
+<span class="go"> * Environment: production</span>
+<span class="go">   WARNING: Do not use the development server in a production environment.</span>
+<span class="go">   Use a production WSGI server instead.</span>
+<span class="go"> * Debug mode: off</span>
+<span class="go"> * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)</span>
+</pre></div>
+<p>We used <code>export</code> to set the environmental variable <code>FLASK_APP</code> to our application’s name, <code>my-app.py</code>, now when we use <code>flask run</code>, Flask looks at the <code>FLASK_APP</code> environmental variable and runs our app.</p>
+<p>You should see a line saying that our app is running at <code>http://127.0.0.1:5000/</code>.
+<code>127.0.0.1</code> is the <code>localhost</code> which refers to my own computer - since the web server is running on my computer - and 5000 is the port on which my app is running at; Now open your browser and type in “127.0.0.1:5000” and you should see it, beautiful and neatly printed: Hello, world!
+Notice that Flask works with pure <span class="caps">HTML</span> code, so instead of returning <code>Hello, world!</code> in our index function, we can return <code>&lt;h1&gt;Hello, world!&lt;/h1&gt;</code>, now restart the server, reload the page and you should see Hello, world! as a nice <span class="caps">HTML</span> headline.</p>
+<blockquote class="blockquote">
+<p><h1>Hello, world!</h1></p>
+</blockquote>
+<p>Additionally, Flask is serving our application at hostname <code>127.0.0.1:5000</code>, Flask works by returning different <span class="caps">HTML</span> pages to the viewer based on the route its on, for simplicity, let say you are visiting a webpages “http://foo.com/bar”, behind the scenes you are sending a <strong>request</strong> to the server, demanding <code>/bar</code>, the server looks at their files and returns <code>/bar</code> to you, Flask - client-side framework - does the same, it executes Python functions based on whatever route you are visiting, then it returns a pure static <span class="caps">HTML</span> document to the user.</p>
+<p>To further illustrate the idea of routes, try to open <code>127.0.0.1:5000/blah</code> and you will be stopped by a <strong>Not Found</strong> error message, this is because Flask returns Hello, world! only at route “/” not “/blah”.</p>
+<p>Let’s create another route to clarify that concept. In your <code>my-app.py</code> file add the following code:</p>
+<div class="highlight"><pre><span></span><span class="nd">@app.route</span><span class="p">(</span><span class="s2">"/&lt;name&gt;"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s2">"&lt;h1&gt;Hello, {}!&lt;/h1&gt;"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">capitalize</span><span class="p">())</span>
+</pre></div>
+<p>This technique is called a <strong>Dynamic <span class="caps">URL</span></strong>, at Line 1 we specified a variable, <code>name</code>, between angle brackets, this variable which is a part of the <span class="caps">URL</span> address is then passed to our <code>hello</code> function and returned as a capitalized word inside a <span class="caps">HTML</span> tag, how simple!</p>
+<p>Now restart the server and add <code>/pop</code> to your <span class="caps">URL</span>, you should see a <code>Hello, Pop!</code> headline, experiment with different names and notice how the page’s content changes based on the route, this is especially useful when you want to create a customized experience for each user, you might have <code>/login/Adham</code> that displays <code>Adham</code><span class="quo">‘</span>s profile based on the route your using.</p>
+<p>I will be writing a second post about Flask soon, It would be really appreciated if you leave me a reaction or a comment below, Thanks for sticking around. Stay tuned!</p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<div id="aboutme">
+        <p>
+            <img width="100%" class="img-thumbnail" src="../images/avatar.png"/>
+        </p>
+    <p>
+      <strong>About Adham Elmosalamy</strong><br/>
+        I am a programmer and graphic designer who enjoys teaching and sharing knowledge.
+    </p>
+</div><!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://github.com/aelmosalamy"><i class="fa fa-github-square fa-lg"></i> GitHub</a></li>
+    <li class="list-group-item"><a href="https://stackoverflow.com/users/8249904/aelmosalamy"><i class="fa fa-stack-overflow fa-lg"></i> Stackoverflow</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Recent Posts -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+  <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="../say-hello-with-flask/">Say Hello with&nbsp;Flask!</a></li>
+    <li class="list-group-item"><a href="../python-list-comprehensions/">Python List&nbsp;Comprehensions!</a></li>
+    <li class="list-group-item"><a href="../linux-into-scene/">Linux into the&nbsp;scene!</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Recent Posts -->
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="../"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-4">
+      <a href="../tag/flask.html">flask</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="../tag/linux.html">linux</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="../tag/python.html">python</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="../tag/tips.html">tips</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="../tag/ubuntu.html">ubuntu</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="../tag/web.html">web</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Github -->
+<li class="list-group-item">
+  <h4><i class="fa fa-github fa-lg"></i><span class="icon-label">GitHub Repos</span></h4>
+  <div id="gh_repos">
+    <p class="list-group-item">Status updating...</p>
+  </div>
+</li>
+<!-- End Sidebar/Github -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2019 Adham Elmosalamy
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../theme/js/respond.min.js"></script>
+
+
+
+<!-- GitHub JS Code -->
+<script type="text/javascript">
+$(document).ready(function () {
+  if (!window.jXHR) {
+    var jxhr = document.createElement('script');
+    jxhr.type = 'text/javascript';
+    jxhr.src = '../theme/js/jXHR.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(jxhr, s);
+  }
+
+  github.showRepos({
+    user: 'aelmosalamy',
+    count: 5,
+    skip_forks: false,
+    target: '#gh_repos'
+  });
+});
+</script>
+<script src="../theme/js/github.js" type="text/javascript"></script>
+<!-- End GitHub JS Code -->
+
+
+</body>
+</html>

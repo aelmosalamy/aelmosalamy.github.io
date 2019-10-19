@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <!-- AOS Library -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!-- Using FontAwesome -->
+  <script src="https://kit.fontawesome.com/3f362b3814.js" crossorigin="anonymous"></script>
+  <title>Adham - Full-Stack Developer</title>
+</head>
+<body>
+  <nav id="navbar">
+    <a href="#">Home</a>
+    <a href="#projects-section">Projects</a>
+    <a href="#about-section">About me</a>
+  </nav>
+  <section id="welcome-section">
+    <div id="msgs">
+      <div id="welcome-msg">
+        <h1 class="gradient" data-aos-duration=1000 data-aos="fade-right">Hi, I am Adham.</h1>
+      </div>
+      <div id="sub-msg">
+          <h1 data-aos-duration=1000 data-aos="fade-left" data-aos-delay=1500>A Full-Stack Developer.</h1>
+      </div>
+    </div>
+    <a onclick="go('projects-section')" id="goto-projects" class="btn btn-round fas fa-arrow-down"></a>
+  </section>
+  <section id="projects-section">
+    <div class="container">
+      <header id="projects-header">
+        <h1 class="gradient">Projects</h1>
+        <p class="gradient">A selection of my work, showcasing various technologies</p>
+      </header>
+      <div id="projects">
+        <!-- <div data-aos="fade-up" data-aos-offset=300 class="project-tile">
+          <p class="project-name">blah</p>
+          <p class="project-description">blah blah blah blah blah</p>
+          <div class="project-tags">
+              <span class="tag">HTML5</span><span class="tag">CSS3</span>
+          </div>
+          <img class="project-screenshot" src="https://via.placeholder.com/300">
+          <div class="project-links">
+            <a href="" class="project-demo btn">demo</a>
+            <a href="" class="project-source btn">source</a>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </section>
+  <section id="about-section">
+    
+  </section>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({duration: 500});
+  </script>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

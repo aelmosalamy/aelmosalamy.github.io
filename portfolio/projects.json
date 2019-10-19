@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Product Landing Page",
+    "description": "A responsive landing page for an imaginary furniture company.",
+    "tags": ["HTML", "CSS"],
+    "screenshot_url": "img/landing_page.png",
+    "demo_url": "https://codepen.io/aelmosalamy/full/RwbOqMX",
+    "source_url": "https://codepen.io/aelmosalamy/pen/RwbOqMX"
+  },
+  {
+    "name": "Tribute Page",
+    "description": "A demo one-page site as a tribute for Al-Khwarizmi the father of Algebra.",
+    "tags": ["HTML", "CSS"],
+    "screenshot_url": "img/tribute_page.png",
+    "demo_url": "https://codepen.io/aelmosalamy/full/MWgqYjv",
+    "source_url": "https://codepen.io/aelmosalamy/pen/MWgqYjv"
+  },
+  {
+    "name": "Technical Documentation",
+    "description": "A responsive documentation page with navigation links on the side.",
+    "tags": ["HTML", "CSS"],
+    "screenshot_url": "img/documentation_page.png",
+    "demo_url": "https://codepen.io/aelmosalamy/full/bGGVjxW",
+    "source_url": "https://codepen.io/aelmosalamy/pen/bGGVjxW"
+  }
+]
