@@ -17,15 +17,15 @@ function displayProjects() {
     }
     let cardTemplate = `
         <div data-aos="fade-up" class="project-tile">
-          <p class="project-name">${p.name}</p>
-          <p class="project-description">${p.description}</p>
+          <p class="gradient project-name">${p.name}</p>
+          <p class="gradient project-description">${p.description}</p>
           <div class="project-tags">
             ${tags_str}
           </div>
           <img class="project-screenshot" src="${p.screenshot_url}">
           <div class="project-links">
-            <a href="${p.demo_url}" target="_blank" class="far fa-eye btn project-demo"></a>
-            <a href="${p.source_url}" target="_blank" class="fas fa-file-code btn project-source"></a>
+            <a href="${p.demo_url}" target="_blank" class="far fa-eye project-demo"></a>
+            <a href="${p.source_url}" target="_blank" class="fas fa-file-code project-source"></a>
           </div>
         </div>`
     projectsDOM.insertAdjacentHTML('beforeend', cardTemplate);

@@ -10,13 +10,13 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <!-- Using FontAwesome -->
   <script src="https://kit.fontawesome.com/3f362b3814.js" crossorigin="anonymous"></script>
-  <title>Adham - Full-Stack Developer</title>
+  <title>Adham - Front-End Developer</title>
 </head>
 <body>
   <nav id="navbar">
     <a href="#">Home</a>
     <a href="#projects-section">Projects</a>
-    <a href="#about-section">About me</a>
+    <a href="#about-section">About</a>
   </nav>
   <section id="welcome-section">
     <div id="msgs">
@@ -24,7 +24,7 @@
         <h1 class="gradient" data-aos-duration=1000 data-aos="fade-right">Hi, I am Adham.</h1>
       </div>
       <div id="sub-msg">
-          <h1 data-aos-duration=1000 data-aos="fade-left" data-aos-delay=1500>A Full-Stack Developer.</h1>
+          <h1 data-aos-duration=1000 data-aos="fade-left" data-aos-delay=1500>A Front-End Developer.</h1>
       </div>
     </div>
     <a onclick="go('projects-section')" id="goto-projects" class="btn btn-round fas fa-arrow-down"></a>
@@ -32,7 +32,7 @@
   <section id="projects-section">
     <div class="container">
       <header id="projects-header">
-        <h1 class="gradient">Projects</h1>
+        <h1><span class="gradient">Projects</span></h1>
         <p class="gradient">A selection of my work, showcasing various technologies</p>
       </header>
       <div id="projects">
@@ -52,7 +52,21 @@
     </div>
   </section>
   <section id="about-section">
-    
+      <div class="container">
+        <h1><span class="gradient">About Adham.</span></h1>
+        <hr>
+        
+        <div id="contact-card">
+          <img id="contact-img"src="img/avatar.png" alt="Avatar icon">
+          <p>My name is <span>Adham Elmosalamy,</span> I go with the pseudonym <span>aelmosalamy,</span> I am a <span>front-end developer and artist</span> who loves working on creative projects. I build reponsive websites for your next world-shaking idea, your new non-profit or even your very own personal webpage. With proficiency in modern, responsive web technologies such as <span>HTML5</span> and <span>CSS3</span> and knowledge of <span>core UI/UX principles.<br>
+          </span><p style="margin-top: 1em;">Find <span>@aelmosalamy</span> at
+            <a id="profile-link" target="_blank" href="https://github.com/aelmosalamy"><span>GitHub</span></a> or 
+            <a id="profile-link" target="_blank" href="https://www.freecodecamp.org/aelmosalamy"><span >FreeCodeCamp</span</a>.</p>
+          </p>
+        </div>
+        <hr>
+        
+      </div>
   </section>
 
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
