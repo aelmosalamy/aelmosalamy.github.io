@@ -1,26 +1,34 @@
 [
   {
-    "name": "Product Landing Page",
-    "description": "A responsive landing page for an imaginary furniture company.",
+    "name": "Photo Gallery",
+    "description": "An elegant photo gallery with on-scroll animations",
+    "tags": ["HTML", "CSS", "JS", "AOS.js"],
+    "screenshot_url": "img/bird-scrot.png",
+    "demo_url": "https://codepen.io/aelmosalamy/full/mdbwBqM",
+    "source_url": "https://codepen.io/aelmosalamy/pen/mdbwBqM"
+  },
+  {
+    "name": "Technical Documentation",
+    "description": "A responsive documentation page with side navigation",
     "tags": ["HTML", "CSS"],
-    "screenshot_url": "img/landing_page.png",
-    "demo_url": "https://codepen.io/aelmosalamy/full/RwbOqMX",
-    "source_url": "https://codepen.io/aelmosalamy/pen/RwbOqMX"
+    "screenshot_url": "img/doc-scrot.png",
+    "demo_url": "https://codepen.io/aelmosalamy/full/bGGVjxW",
+    "source_url": "https://codepen.io/aelmosalamy/pen/bGGVjxW"
   },
   {
     "name": "Tribute Page",
-    "description": "A demo one-page site as a tribute for Al-Khwarizmi the father of Algebra.",
+    "description": "A demo one-page tribute for Al-Khwarizmi",
     "tags": ["HTML", "CSS"],
-    "screenshot_url": "img/tribute_page.png",
+    "screenshot_url": "img/tribute-scrot.png",
     "demo_url": "https://codepen.io/aelmosalamy/full/MWgqYjv",
     "source_url": "https://codepen.io/aelmosalamy/pen/MWgqYjv"
   },
   {
-    "name": "Technical Documentation",
-    "description": "A responsive documentation page with navigation links on the side.",
+    "name": "Product Landing Page",
+    "description": "A landing page for an imaginary furniture company",
     "tags": ["HTML", "CSS"],
-    "screenshot_url": "img/documentation_page.png",
-    "demo_url": "https://codepen.io/aelmosalamy/full/bGGVjxW",
-    "source_url": "https://codepen.io/aelmosalamy/pen/bGGVjxW"
+    "screenshot_url": "img/product-scrot.png",
+    "demo_url": "https://codepen.io/aelmosalamy/full/RwbOqMX",
+    "source_url": "https://codepen.io/aelmosalamy/pen/RwbOqMX"
   }
 ]

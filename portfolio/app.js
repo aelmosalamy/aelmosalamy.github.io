@@ -16,7 +16,7 @@ function displayProjects() {
       }
     }
     let cardTemplate = `
-        <div data-aos="fade-up" class="project-tile">
+        <div class="project-tile">
           <p class="gradient project-name">${p.name}</p>
           <p class="gradient project-description">${p.description}</p>
           <div class="project-tags">

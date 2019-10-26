@@ -43,7 +43,10 @@ a {
 }
 
 #navbar a:hover {
-  text-decoration: underline;
+  background: -webkit-linear-gradient(0deg, #f8ff00 0%, #3ad59f 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 section {
@@ -81,6 +84,7 @@ section {
 #projects-section {
   background-color: #000;
   padding: var(--section-padding);
+  padding-bottom: 0;
 }
 
 .fancy {
@@ -156,8 +160,9 @@ a#goto-projects:hover {
   margin: 0 auto;
   padding: 1em;
   height: 80%;
-  width: 80%;
+  width: 90%;
 }
+
 .container header {
   font-family: "Roboto", sans-serif;
   margin-bottom: 2em;
@@ -172,12 +177,14 @@ a#goto-projects:hover {
 }
 
 #projects {
-  -webkit-column-count: var(--project-columns);
+  /* -webkit-column-count: var(--project-columns);
   column-count: var(--project-columns);
   -webkit-column-gap: 20px;
   column-gap: 20px;
-  -webkit-column-width: var(--column-width);
-  column-width: var(--column-width);
+  -webkit-column-width: var(--column-width); */
+  display: grid;
+  grid-template-columns: repeat(var(--project-columns), 1fr);
+  gap: 1em;
 }
 
 .project-tile {
@@ -197,7 +204,6 @@ a#goto-projects:hover {
   font-size: 18px;
   width: 100%;
   height: auto;
-  margin-bottom: 30px;
 }
 
 .project-tile > * {
@@ -313,25 +319,28 @@ section#about-section {
   text-justify: distribute; 
 }
 
-#about-section .container > h1 {
+#about-section .container> #contact-card > h1 {
   font-size: 48px;
 }
 
 #contact-card {
-  padding: 2em 0;
-  height: 30vh;
+  margin: 2em 0;
   color: #fff;
+}
+
+#contact-slider {
+  display: flex;
+  flex-direction: row;
 }
 
 img#contact-img {
   /* max-width: 100%;
   max-height: 100%; */
-  height: 100%;
+  height: 20vh;
   width: auto;
   display: block;
   margin-right: 1em;
   border-radius: 5px;
-  float: left;
 }
 
 /* Utility */
@@ -394,16 +403,28 @@ a {
 }
 
 /* MEDIA QUERIES */
-@media(max-width: 400px) {
+@media(max-width: 900px) {
   :root {
     --project-columns: 1;
   }
-
   .container {
     width: 100%;
   }
-  #projects {
-    -webkit-column-count: 1;
-    column-count: 1; 
+}
+@media(max-width: 450px) {
+  :root {
+    --section-padding: 10px;
+  }
+  
+  img#contact-img {
+    height: 100px;
+    width: 100px;
+    margin: 20px auto 0 auto;
+    order: 2;
+  }
+
+  #contact-slider {
+    flex-direction: column;
+    justify-content: center;
   }
 }
