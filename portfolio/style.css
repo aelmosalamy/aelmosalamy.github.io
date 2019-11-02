@@ -321,6 +321,7 @@ section#about-section {
 
 #about-section .container> #contact-card > h1 {
   font-size: 48px;
+  margin-bottom: 0.3em;
 }
 
 #contact-card {
