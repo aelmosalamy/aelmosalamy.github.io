@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<title>Dice Roller</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container-fluid v-100 bg-light">
+		<div class="container p-3 bg-light">
+			<h1 class="text-center display-1 p-2 pb-3">Dice Roller</h1>
+			<div class="container">
+				<div class="alert alert-primary mb-5 shadow-lg">
+					<i class="fas fa-dice"></i> This cool app simulates the rolling of 4 dice and calculates their sum. Impressive, I know.
+				</div>
+				<div id="result" class="mb-3 d-flex justify-content-between">
+					<p class="alert alert-info mb-0 mr-3 w-100 d-inline">Total: 0</p>
+					<button id="reset" class="btn btn-danger">Reset All</button>
+				</div>
+				<div id="card-row" class="row">
+					<div id="dice-col" class="col-3 bg-light">
+						<div class="card">
+							<div class="card-header alert-secondary">
+								Unrolled
+							</div>
+							<div class="card-body text-center">
+								<img id="dice1" class="img-fluid mt-3 mb-5 hidden" src="img/dice4.png" alt="">
+								<button id="btn1" class="btn btn-block btn-primary">Roll</button>
+							</div>
+						</div>
+					</div>
+					<div class="col-3 bg-light">
+						<div class="card">
+							<div class="card-header alert-secondary">
+								Unrolled
+							</div>
+							<div class="card-body text-center">
+								<img id="dice2" class="img-fluid mt-3 mb-5 hidden" src="img/dice4.png" alt="">
+								<button id="btn2" class="btn btn-block btn-primary">Roll</button>
+							</div>
+						</div>
+					</div>
+					<div class="col-3 bg-light">
+						<div class="card">
+							<div class="card-header alert-secondary">
+								Unrolled
+							</div>
+							<div class="card-body text-center">
+								<img id="dice3" class="img-fluid mt-3 mb-5 hidden" src="img/dice4.png" alt="">
+								<button id="btn3" class="btn btn-block btn-primary">Roll</button>
+							</div>
+						</div>
+					</div>
+					<div class="col-3 bg-light">
+						<div class="card">
+							<div class="card-header alert-secondary">
+								Unrolled
+							</div>
+							<div class="card-body text-center">
+								<img id="dice4" class="img-fluid mt-3 mb-5 hidden" src="img/dice4.png" alt="">
+								<button id="btn4" class="btn btn-block btn-primary">Roll</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://kit.fontawesome.com/3f362b3814.js" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="script.js"></script>
+</body>
+</html>

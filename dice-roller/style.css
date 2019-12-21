@@ -1,0 +1,47 @@
+html {
+	height: 100vh;
+}
+
+.container-fluid {
+	height: 100vh;
+}
+
+.card-body > .img-fluid {
+	width: 60%;
+	transition: width 1s ease, opacity 1s ease;
+}
+
+.alert-secondary {
+	transition: background-color 0.3s ease;
+}
+
+.alert-warning {
+	transition: background-color 0.3s ease;
+}
+
+.alert-success {
+	transition: background-color 0.3s ease;
+}
+
+.card-body > .img-fluid.hidden {
+	opacity: 0;
+	width: 0%;
+}
+
+.roll {
+	animation-name: spin;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-iteration-count: 1;
+	transform: rotate(10turn);
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0turn);
+	}
+
+	to {
+		transform: rotate(10turn);
+	}
+}
