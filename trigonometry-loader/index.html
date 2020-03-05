@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trigonometry Loader</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    #main {
+      margin: 0 auto;
+      display: flex;
+      width: 100wh;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 1em 0;
+    }
+
+    #svg {
+      position: relative;
+      margin: 0 auto;
+      background-color: rgb(204, 220, 255);
+      margin: 2em 0;
+    }
+
+    h2 {
+      margin-bottom: 0.2em;
+    }
+
+    p {
+      font-style: italic;
+    }
+
+    .slider {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #controls {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (max-width: 720px) {
+      #main {
+        padding: 1em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="main">
+    <h2 id="ygraph">y = a * sin(x), where x = time</h2>
+    <p>A simple loader employing the sine function written by Adham Elmosalamy based on <a
+        href="https://uxdesign.cc/how-you-can-use-simple-trigonometry-to-create-better-loaders-32a573577eb4"
+        target="_blank">this article.</a></p>
+    <svg fill="indigo" id="svg" width=" 640" height="320">
+      <circle id="c1" cx="170" cy="160" r="12" />
+      <circle id="c2" cx="220" cy="160" r="12" />
+      <circle id="c3" cx="270" cy="160" r="12" />
+      <circle id="c4" cx="320" cy="160" r="12" />
+      <circle id="c5" cx="370" cy="160" r="12" />
+      <circle id="c6" cx="420" cy="160" r="12" />
+      <circle id="c7" cx="470" cy="160" r="12" />
+    </svg>
+    <div id="controls">
+      <p style="font-weight: bold; font-style: italic; text-align: center; margin-bottom: 1em;">Feel free to play around with the controls below</p>
+      <div class="slider">
+        <label>Amplitude</label><input id="amplitudeSLD" type="range" min="1" max="101" value="31" step="10"/>
+      </div>
+      <div class="slider">
+        <label>Speed Multiplier</label><input id="speedSLD" type="range" min="0.2" max="2.0" value="1" step="0.2" />
+      </div>
+    </div>
+
+
+
+  </div>
+
+  <script>
+    let c1 = document.getElementById('c1');
+    let c2 = document.getElementById('c2');
+    let c3 = document.getElementById('c3');
+    let c4 = document.getElementById('c4');
+    let c5 = document.getElementById('c5');
+    let c6 = document.getElementById('c6');
+    let c7 = document.getElementById('c7');
+
+    let sliderAmp = document.getElementById('sliderAmp');
+    let sliderSpeed = document.getElementById('sliderSpeed');
+    let ygraph = document.getElementById('ygraph');
+
+    let currentAnimationTime = 0;
+    const centreY = 160;
+    let amplitude = 100;
+    let speed = 1;
+
+    animate();
+
+    function animate() {
+      c1.setAttribute('cy', centreY + amplitude * Math.sin(currentAnimationTime - 6));
+      c2.setAttribute('cy', centreY + amplitude * Math.sin(currentAnimationTime - 5));
+      c3.setAttribute('cy', centreY + amplitude * Math.sin(currentAnimationTime - 4));
+      c4.setAttribute('cy', centreY + amplitude * Math.sin(currentAnimationTime - 3));
+      c5.setAttribute('cy', centreY + amplitude * Math.sin(currentAnimationTime - 2));
+      c6.setAttribute('cy', centreY + amplitude * Math.sin(currentAnimationTime - 1));
+      c7.setAttribute('cy', centreY + amplitude * Math.sin(currentAnimationTime));
+
+      currentAnimationTime += 0.15 * speed;
+      requestAnimationFrame(animate)
+
+    }
+
+    setInterval(() => {
+      amplitude = amplitudeSLD.value;
+      ygraph.innerHTML = "y = " + amplitude + " * sin(x), where x = time";
+    }, 100)
+
+    setInterval(() => {
+      speed = speedSLD.value;
+      }, 100)
+
+  </script>
+</body>
+
+</html>
