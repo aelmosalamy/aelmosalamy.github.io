@@ -58,7 +58,6 @@ main#app {
   opacity: 0;
   -webkit-transition: opacity 200ms linear;
   transition: opacity 200ms linear;
-  opacity: 0
 }
 
 #quote {
@@ -81,9 +80,9 @@ q#text {
 p#author {
   position: absolute;
   font-size: 1.5em;
+  width: 20rem;
   width: -webkit-max-content;
   width: -moz-max-content;
-  width: 20rem;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   opacity: 0.75;
