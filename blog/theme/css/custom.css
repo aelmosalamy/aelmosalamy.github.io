@@ -54,7 +54,6 @@ img#gallery:hover {
 	transition: 0.3s ease;
 }
 
-
 header.page-header {
 	margin-top: 0;
 	margin-bottom: 0;
@@ -62,9 +61,17 @@ header.page-header {
 }
 
 div.panel {
-	margin-bottom: 0;
+	margin-bottom: 1em;
+}
+
+div.panel-body {
+	padding: 5px;
 }
 
 nav.toc > h3 {
 	margin-top: 0;
+}
+
+nav.toc div#toc ul {
+	line-height: 1.75em;
 }
