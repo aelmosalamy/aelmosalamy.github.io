@@ -56,6 +56,6 @@ img#gallery:hover {
 
 
 header.page-header {
-	margin-top: 5px;
-	margin-bot: 5px;
+	margin-top: 0;
+	margin-bottom: 0;
 }
