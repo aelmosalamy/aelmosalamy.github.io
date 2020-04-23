@@ -53,3 +53,9 @@ img#gallery:hover {
 	opacity: 0.7;
 	transition: 0.3s ease;
 }
+
+
+header.page-header {
+	margin-top: 5px;
+	margin-bot: 5px;
+}
