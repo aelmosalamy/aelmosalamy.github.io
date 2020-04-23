@@ -58,4 +58,13 @@ img#gallery:hover {
 header.page-header {
 	margin-top: 0;
 	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+div.panel {
+	margin-bottom: 0;
+}
+
+nav.toc > h3 {
+	margin-top: 0;
 }
