@@ -33,8 +33,14 @@ class Board {
         pixel.addEventListener('contextmenu', e => {
           e.preventDefault()
         })
-        pixel.addEventListener('pointerenter', e => {
+        pixel.addEventListener('touchmove', e => {
           e.preventDefault()
+          let touch = e.changedTouches[0]
+          let el = document.elementFromPoint(touch.clientX, touch.clientY)
+          el.style.backgroundColor = this.color
+        })
+        pixel.addEventListener('pointermove', e => {
+          // e.preventDefault()
           switch (e.buttons) {
             case 1:
               e.target.style.backgroundColor = this.color
