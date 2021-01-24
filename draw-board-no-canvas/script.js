@@ -14,6 +14,30 @@ class Board {
     this.gridY = gridY
     this.pixelSize = pixelSize
     this.bgColor = bgColor
+    // This functions handles all touch events (mobile specific)
+    const touchHandler = e => {
+      e.preventDefault()
+      // Grabs touch changes
+      let touch = e.changedTouches[0]
+      // Grabs target using touch coordinates
+      let el = document.elementFromPoint(touch.clientX, touch.clientY)
+      if (el.classList.contains('pixel')) el.style.backgroundColor = this.color
+    }
+    // This function handles all click events (desktop specific)
+    const clickHandler = e => {
+      // e.preventDefault()
+      switch (e.buttons) {
+        case 1:
+          e.target.style.backgroundColor = this.color
+          break
+        case 2:
+          e.target.style.backgroundColor = this.bgColor
+          break
+        default:
+          break
+      }
+    }
+
     this.initializeBoard()
   }
 
@@ -21,6 +45,32 @@ class Board {
   initializeBoard() {
     this.container.innerHTML = ''
     this.container.style.width = this.gridX * this.pixelSize + 'px'
+
+    // This function will handle all touch events (mobile specific)
+    const touchHandler = e => {
+      e.preventDefault()
+      // Grabs touch changes
+      let touch = e.changedTouches[0]
+      // Grabs target using touch coordinates
+      let el = document.elementFromPoint(touch.clientX, touch.clientY)
+      if (el && el.classList.contains('pixel'))
+        el.style.backgroundColor = this.color
+    }
+    // This function will handle all click events (desktop specific)
+    const clickHandler = e => {
+      // e.preventDefault()
+      switch (e.buttons) {
+        case 1:
+          e.target.style.backgroundColor = this.color
+          break
+        case 2:
+          e.target.style.backgroundColor = this.bgColor
+          break
+        default:
+          break
+      }
+    }
+
     for (let i = 0; i < this.gridY; i++) {
       for (let j = 0; j < this.gridX; j++) {
         // Create a "pixel" element and configure it
@@ -29,29 +79,18 @@ class Board {
         pixel.style.width = this.pixelSize + 'px'
         pixel.style.height = this.pixelSize + 'px'
         pixel.style.backgroundColor = this.bgColor
-        // Add event handlers to our pixel
+        //
+        // Attach event handlers to our pixel
+        //
+        // Prevent right-click events on our board/pixels
         pixel.addEventListener('contextmenu', e => {
           e.preventDefault()
         })
-        pixel.addEventListener('touchmove', e => {
-          e.preventDefault()
-          let touch = e.changedTouches[0]
-          let el = document.elementFromPoint(touch.clientX, touch.clientY)
-          el.style.backgroundColor = this.color
-        })
-        pixel.addEventListener('pointermove', e => {
-          // e.preventDefault()
-          switch (e.buttons) {
-            case 1:
-              e.target.style.backgroundColor = this.color
-              break
-            case 2:
-              e.target.style.backgroundColor = this.bgColor
-              break
-            default:
-              break
-          }
-        })
+        pixel.addEventListener('touchstart', touchHandler)
+        pixel.addEventListener('touchmove', touchHandler)
+        // Manage mouse events (desktop specific)
+        pixel.addEventListener('mousedown', clickHandler)
+        pixel.addEventListener('mousemove', clickHandler)
         // Add pixel to the DOM
         this.container.appendChild(pixel)
       }
