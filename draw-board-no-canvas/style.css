@@ -28,11 +28,13 @@ body {
   overflow: hidden;
   cursor: pointer;
   user-select: none;
+  outline: none;
 }
 
 .pixel {
   border: 0px solid #eee;
   user-select: none;
+  outline: none;
 }
 
 .pixel:hover {
