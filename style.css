@@ -1,0 +1,84 @@
+:root {
+  font-size: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fafafa;
+}
+
+.container {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.title {
+  color: #141;
+  margin: 3rem 0 1.5rem;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 3px 5px 0 rgba(25, 25, 25, 0.2);
+}
+
+.project {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 1rem;
+  color: #141;
+  text-decoration: none;
+  background-color: white;
+  border-bottom: 1px solid #eee;
+}
+
+.project:hover {
+  color: #161;
+}
+
+/* Raise project contents above ::after pseudo-element */
+.project > * {
+  position: relative;
+  z-index: 1;
+}
+
+.project:nth-child(odd) {
+  border-right: 1px solid #eee;
+}
+
+.project::after {
+  content: '';
+  position: absolute;
+  background-color: #ccffcc;
+  width: 0%;
+  opacity: 0;
+  display: block;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: 200ms ease-in-out all;
+}
+
+.project:hover::after {
+  opacity: 1;
+  width: 100%;
+}
+
+@media (max-width: 360px) {
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+}
